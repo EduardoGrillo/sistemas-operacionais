@@ -19,7 +19,11 @@ class ReadFile{
     ReadFile();
     ~ReadFile();
 
-    void leitura(string path, unordered_map <string, vector<int>> *umap, bool controle);
+    void leitura(string path, 
+        unordered_map <string, vector<int>> *item, 
+        unordered_map <string, vector<int>> *classe,
+        unordered_map <int, vector<string>> *processo,
+        bool controle);
 };
 
 #endif

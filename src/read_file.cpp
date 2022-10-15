@@ -4,7 +4,12 @@ ReadFile::ReadFile(){}
 
 ReadFile::~ReadFile(){}
 
-void ReadFile::leitura(string path, unordered_map <string, vector<int>> *umap, bool controle) {
+void ReadFile::leitura(string path, 
+    unordered_map <string, vector<int>> *item, 
+    unordered_map <string, vector<int>> *classe,
+    unordered_map <int, vector<string>> *processo,
+    bool controle) {
+
 	path.insert(0, "src/arquivos/");
 
 	ifstream myfile(path);
@@ -16,10 +21,12 @@ void ReadFile::leitura(string path, unordered_map <string, vector<int>> *umap, b
 
 	if (myfile.is_open()) {
 		while (getline(myfile, line)){
+            contLinha++;
             if(controle == true){
-                contLinha++;
-                t.tok(line, contLinha); //chamando a classe tokenizar para fazer a tokenização
-            } 
+                t.tok(line, contLinha, item, classe); //chamando a classe tokenizar para fazer a tokenização
+            } else {
+                t.tok2(line, contLinha, processo);
+            }
         }
 		myfile.close();
 	} else cout << "Nao foi possivel abrir o arquivo!" << endl;
