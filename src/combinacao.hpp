@@ -11,7 +11,6 @@ class Combinacao{
     private:
         
     public:
-    //vector <vector <string>> vecString;
     vector <string> str;
 
     Combinacao();

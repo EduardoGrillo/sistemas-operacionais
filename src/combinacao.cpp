@@ -15,11 +15,9 @@ void Combinacao::Combinacoes(vector<string> vec, int perm[], int index, int n, i
 		for (int i = 0; i < n; i++){
             if (perm[i] == 1){
                 aux.push_back(vec.at(i));
-				s.append(vec.at(i));
+				s.append(vec.at(i)).append("_");
             }
         }
-		cout << s << endl;
-        //this->vecString.push_back(aux);
 		this->str.push_back(s);
 
 	} else if ((n - index) >= (k - count)) {

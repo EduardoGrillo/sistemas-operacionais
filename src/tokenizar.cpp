@@ -15,8 +15,6 @@ void Tokenizar::tok(string text, int contLinha,
 	stringstream sstream(text);
 	string token;
 
-    //cout << contLinha << endl;
-
 	while (getline(sstream, token, del)){
         if(colum < 5){
             token.append(",").append(to_string(colum++)); //converter a coluna em string e adicionar no token
@@ -40,11 +38,7 @@ void Tokenizar::tok(string text, int contLinha,
                 classe->insert({token, v});
             } 
         }
-
-        // cout << token << endl;
     }
-
-    // cout << endl;
 }
 
 void Tokenizar::tok2(string text, int contLinha, 

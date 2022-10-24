@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <vector>
 #include <algorithm>  
+#include <sstream>
 
 #include "combinacao.hpp"
 
@@ -42,7 +43,6 @@ class Kernel{
     void verificaCache(string combinacao, 
         unordered_map <string, vector<int>> *item,
         unordered_map <string, vector<int>> *classe,
-        unordered_map <int, vector <string>> *combinacoesProcessos,
         unordered_map <string, int> *vectorAux
     );
 
