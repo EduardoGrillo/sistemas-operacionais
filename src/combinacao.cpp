@@ -7,13 +7,20 @@ void Combinacao::Combinacoes(vector<string> vec, int perm[], int index, int n, i
 	static int count = 0;
     vector <string> aux;
 
+	aux.clear();
+
 	if (count == k) {
+		string s = "";
+
 		for (int i = 0; i < n; i++){
             if (perm[i] == 1){
                 aux.push_back(vec.at(i));
+				s.append(vec.at(i));
             }
         }
-        this->vecString.push_back(aux);
+		cout << s << endl;
+        //this->vecString.push_back(aux);
+		this->str.push_back(s);
 
 	} else if ((n - index) >= (k - count)) {
 

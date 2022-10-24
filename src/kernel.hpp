@@ -14,7 +14,8 @@ using namespace std;
 
 class Kernel{
     private:
-
+    unordered_map <string, unordered_map <string, int>> cache; 
+    
     public:
     
     Kernel();
@@ -27,16 +28,23 @@ class Kernel{
     
     void combinacaoReduzida(
         unordered_map <int, vector<string>> *processoReduzido,
-        unordered_map <int, vector<vector <string>>> *combinacoesProcessos
+        unordered_map <int, vector <string>> *combinacoesProcessos
     );
 
     void intersecaoCombinacao(
         unordered_map <string, vector<int>> *item,
         unordered_map <string, vector<int>> *classe,
-        unordered_map <int, vector<vector <string>>> *combinacoesProcessos
+        unordered_map <int, vector <string>> *combinacoesProcessos
     );
 
     void intersecaoGeral(vector <int> v1, vector <int> v2, vector <int> *res);
+
+    void verificaCache(string combinacao, 
+        unordered_map <string, vector<int>> *item,
+        unordered_map <string, vector<int>> *classe,
+        unordered_map <int, vector <string>> *combinacoesProcessos,
+        unordered_map <string, int> *vectorAux
+    );
 
 };
 

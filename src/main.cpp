@@ -18,7 +18,7 @@ int main(){
     unordered_map <int, vector<string>> processoReduzido;
     unordered_map <int, vector<string>>:: iterator it2;
     
-    unordered_map <int, vector<vector <string>>> combinacoesProcessos;
+    unordered_map <int, vector <string>> combinacoesProcessos;
 
     int op = 1;
 
